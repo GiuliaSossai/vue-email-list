@@ -4,12 +4,13 @@ const app = new Vue ({
    data: {
       errorMsg: false,
       mail: '',
-      emails: []
-
+      emails: [],
+      isLoading: true
    },
 
    methods: {
       getMail(){
+         
          for(let i = 0; i < 10; i++){
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
                .then((response) =>{
@@ -23,7 +24,7 @@ const app = new Vue ({
 
                   this.emails.push(this.mail);
                   console.log('array emails', this.emails);
-                  
+                  this.isLoading = false;
                })
 
                .catch((error) => {

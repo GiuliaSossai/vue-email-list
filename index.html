@@ -15,10 +15,14 @@
       </div>
 
       <div v-else>
-         <h2>lista mail:</h2>
-         <ul>
-            <li v-for="email in emails">{{email}}</li>
-         </ul>
+         <div v-if="!isLoading" >
+            <h2>lista mail:</h2>
+            <ul>
+               <li v-for="email in emails">{{email}}</li>
+            </ul>
+         </div>
+         
+         <h2 v-else>loading....</h2>
       </div>
       
    </div>
