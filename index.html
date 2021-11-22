@@ -15,8 +15,9 @@
       </div>
 
       <div v-else>
+         <h2>lista mail:</h2>
          <ul>
-            <li >{{mail}}</li>
+            <li v-for="email in emails">{{email}}</li>
          </ul>
       </div>
       
